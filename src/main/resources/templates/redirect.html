@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Forward to Secure Payment Gateway</title>
+
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+</head>
+
+<body>
+<main role="main" class="container">
+    <h2>Forwarding to Payment Gateway</h2>
+    <form name="myForm" id="myForm" method="post" action="/tc">
+        <input type="hidden" name="trxcustid_licensekey" th:value="${trxcustid_licensekey}"/>
+        <input type="hidden" name="trxcustid" th:value="${trxcustid}"/>
+        <input type="hidden" name="billingids" th:value="${billingids}"/>
+        <input type="hidden" name="checking_ach" th:value="${checking_ach}"/>
+    </form>
+</main>
+<!-- /.container -->
+
+<script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        submitform();
+        function submitform() {
+            document.forms["myForm"].submit();
+        }
+    }
+</script>
+</body>
+</html>
