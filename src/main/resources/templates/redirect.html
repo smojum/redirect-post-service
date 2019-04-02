@@ -15,6 +15,7 @@
 <main role="main" class="container">
     <h2>Forwarding to Payment Gateway</h2>
     <form name="myForm" id="myForm" method="post" action="/tc">
+        <!-- todo run a loop to get this information from map -->
         <input type="hidden" name="trxcustid_licensekey" th:value="${trxcustid_licensekey}"/>
         <input type="hidden" name="trxcustid" th:value="${trxcustid}"/>
         <input type="hidden" name="billingids" th:value="${billingids}"/>
