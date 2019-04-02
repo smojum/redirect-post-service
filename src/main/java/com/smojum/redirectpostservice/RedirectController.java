@@ -35,4 +35,14 @@ public class RedirectController {
 //        model.addAttribute("", "");
         return "redirect";
     }
+
+    @RequestMapping(value = "/callback", method = {RequestMethod.GET, RequestMethod.POST})
+    public ModelAndView callback(Model model) {
+        String callbackurl = ""; // TODO: 4/2/2019
+        // TODO: 4/2/2019  Here you can do any db update/ rest call etc.
+        RedirectView redirectView = new RedirectView();
+        redirectView.setUrl(callbackurl);
+        ModelAndView modelAndView = new ModelAndView(redirectView);
+        return modelAndView;
+    }
 }
